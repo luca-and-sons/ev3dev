@@ -6,10 +6,10 @@ def clamp(value, lower, upper):
     return min(upper, max(value, lower))
 
 
-print 'press 1+2 on the wiimote now'
+print('press 1+2 on the wiimote now')
 time.sleep(1)
 w = cwiid.Wiimote()
-print 'connected?'
+print('connected?')
 w.led = 6
 w.rpt_mode = cwiid.RPT_ACC | cwiid.RPT_BTN
 
@@ -46,10 +46,10 @@ try:
         if buttons != last_btn_state:
             if buttons & cwiid.BTN_MINUS:
                 top_speed -= 10
-                print top_speed
+                print(top_speed)
             if buttons & cwiid.BTN_PLUS:
                 top_speed += 10
-                print top_speed
+                print(top_speed)
             if buttons & cwiid.BTN_2:
                 move = 1
             elif buttons & cwiid.BTN_1:
@@ -64,7 +64,7 @@ try:
                 arm.run = 1
             else:
                 arm.run = 0
-            print top_speed, move
+            print(top_speed, move)
             last_btn_state = buttons
 
         if move:
